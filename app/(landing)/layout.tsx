@@ -5,8 +5,6 @@ import { Footer } from "@/components/layout/footer";
 import { CookieConsent } from "@/components/ui/cookie-consent";
 import Script from "next/script";
 import { Toaster } from "sonner";
-import { GA_TRACKING_ID } from "@/hooks/google/gtag";
-import Providers from "./_contexts";
 
 export const metadata: Metadata = {
   title: "BigBased.AI | Independent Wealth Through AI Trading",
@@ -36,16 +34,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <head>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          strategy="afterInteractive"
-        />
-      </head>
-      <body className="min-h-screen overflow-x-hidden bg-zinc-950 font-['Neue_Haas_Grotesk_Display_Pro',helvetica,sans-serif]">
-        <Providers>{children}</Providers>
-      </body>
-    </html>
+    <body className="min-h-screen overflow-x-hidden bg-zinc-950 font-['Neue_Haas_Grotesk_Display_Pro',helvetica,sans-serif]">
+      <Toaster position="top-right" richColors />
+      <div className="flex min-h-screen flex-col">
+        <Navbar />
+        <main className="flex-1 pt-16">{children}</main>
+        <Footer />
+        <CookieConsent />
+      </div>
+    </body>
   );
 }

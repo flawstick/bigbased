@@ -23,7 +23,7 @@ export const PrivyProvider: React.FC<Props> = ({ children }) => {
         appearance: {
           theme: "dark",
           accentColor: "#d19900",
-          logo: "/logo.png",
+          logo: "/white-logo.png",
           walletChainType: "solana-only",
         },
         externalWallets: {
