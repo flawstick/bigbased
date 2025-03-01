@@ -1,0 +1,1 @@
+export const SOLANA_GET_POOLS_NAME = "get-pools";

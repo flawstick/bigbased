@@ -1,0 +1,2 @@
+export const SOLANA_BUBBLE_MAPS_PROMPT = 
+`Get the bubble map of a token given its contract address. This shows the distribution of holders of the token and is helpful for identifying the top holders of the token.`; 
